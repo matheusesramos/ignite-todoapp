@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Image, TextInput, TouchableOpacity, FlatList, Alert } from 'react-native';
+import { View, Text, Image, TextInput, TouchableOpacity, FlatList, Alert, Keyboard } from 'react-native';
 
 import { styles } from './styles';
 import logo from '../../assets/images/logo.png';
@@ -29,6 +29,7 @@ export function Home() {
 
         setTasks(prevState => [...prevState, {title: taskTitle, status: false}]);
         setTaskTitle('');
+        Keyboard.dismiss();
     }
 
     function handleTaskRemove(task: Task) {
